@@ -1,0 +1,25 @@
+{
+  "Roupas": [
+    {
+      "nome": "Jean Azul",
+      "categoria": "Calça",
+      "preco": "10",
+      "img": "https://lojapkd.com.br/wp-content/uploads/2022/03/PKD_LOOKBOOK-1096-Editar.jpg",
+      "id": 1
+    },
+    {
+      "nome": "Camisa Rosa",
+      "categoria": "Camisa",
+      "preco": "20",
+      "img": "https://images.tcdn.com.br/img/img_prod/275189/camisa_rosa_100_poliester_para_sublimacao_p_2705_1_20200722153602.jpg",
+      "id": 2
+    },
+    {
+      "nome": "Jaqueta SuperEstar",
+      "categoria": "Casaco",
+      "preco": "30",
+      "img": "https://m.media-amazon.com/images/I/51CDJ0YHMWL._AC_SY1000_.jpg",
+      "id": 3
+    }
+  ]
+}
