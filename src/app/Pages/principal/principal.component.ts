@@ -26,7 +26,7 @@ export class PrincipalComponent implements OnInit {
 
   constructor(
     private geralService: GeralService,
-    private http: HttpClient // Add HttpClient to the constructor
+    private http: HttpClient 
   ) { }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class PrincipalComponent implements OnInit {
   loadAllRoupas() {
     this.geralService.getAllRoupas().subscribe((result: any) => {
       this.listaRoupa = result;
-      this.listaRoupaOriginal = result; // Salve uma cópia não filtrada
+      this.listaRoupaOriginal = result; 
     });
   }
   filterCalcas() {
@@ -56,17 +56,19 @@ export class PrincipalComponent implements OnInit {
   }
 
   AddRoupa() {
-    // Update the Objeto with the current input values
     this.Objeto.nome = this.setNome;
     this.Objeto.categoria = this.setCategoria;
     this.Objeto.preco = this.setPreco;
     this.Objeto.img = this.setImg;
 
-    // Call the service to add the item
+   
     this.geralService.addRoupa(this.Objeto).subscribe((result: any) => {
-      // You can update this.listaRoupa if needed
-      // For example, if you want to refresh the list after adding a new item.
+      this.loadAllRoupas();
     });
+    this.Objeto.nome = "";
+    this.Objeto.categoria = ""
+    this.Objeto.preco = 0;
+    this.Objeto.img = "";
   }
 
   deleteRoupa(id: number) {
@@ -74,11 +76,9 @@ export class PrincipalComponent implements OnInit {
       this.geralService.deleteRoupa(id).subscribe(
         () => {
           alert("Deletado com sucesso!");
-          // Optionally, you can refresh the list of items after deletion.
           this.loadAllRoupas();
         },
         (error) => {
-          console.error("Erro ao deletar:", error);
           alert("Erro ao deletar o item.");
         }
       );

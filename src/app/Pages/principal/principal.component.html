@@ -8,27 +8,36 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="filtro">
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0 h1">Roupas</span>
+            </div>
+          </nav>
+    </header>
+    <div class="filtro d-flex justify-content-around mt-3 mb-3">
         <button class="btn btn-success" (click)="filterCalcas()">Calças</button>
         <button class="btn btn-success" (click)="filterCamisa()">Camisa</button>
         <button class="btn btn-success" (click)="filterCasaco()">Casaco</button>
         <button class="btn btn-secondary" (click)="resetFilter()">Reset</button>
     </div>
-    <div class="roupas">
+    <div class="roupas d-flex flex-row mb-3">
         <div *ngFor="let item of listaRoupa">
-          <div class="card" style="width: 18rem;">
-            <img [src]="item.img" class="card-img-top" alt="...">
+          <div class="card m-1" style="width: 18rem;">
+            <img [src]="item.img" class="card-img-top" style="height: 300px;" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ item.nome }}</h5>
               <p class="card-text">$ {{ item.preco }} | {{item.categoria}}</p>
+              <div class="d-flex justify-content-between">
               <button class="btn btn-danger" (click)="deleteRoupa(item.id)">Delete</button>
               <button class="btn btn-primary">Update</button>
+            </div>
             </div>
           </div>
         </div>
       </div>
     
-      <div class="adicionar">
+      <div class="adicionar m-3 p-3">
         <h3>Adicionar nova roupa</h3>
         <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Nome</label>
